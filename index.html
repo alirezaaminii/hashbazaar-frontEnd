@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>HashBazaar</title>
+
+    <!--Styles-->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css"  type="text/css">
+    <link rel="stylesheet" href="scss/main.css">
+
+  <body>
+    <!---->
+    <!---->
+  <div class=" mainContainer container-fluid">
+
+      <div class="row">
+
+  <!--======================nav bar=======================-->
+      <section class="position-fixed" id="mainNav">
+          <nav class="navbar">
+              <span class="navbar-brand mb-0 h1">
+                  <!--src="{{URL::asset('img/Logo_header.svg')}}"-->
+                  <a href="http://hashbazaar.com">
+                      <img class="Logo_header" src="img/Logo_header.svg" alt="Logo_header">
+                  </a>
+              </span>
+              <button class="navbar-toggler d-xl-none d-lg-none " type="button" data-toggle="collapse" data-target="#sideBar" aria-controls="sideBar" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+          </nav>
+      </section>
+  <!--======================side bar=======================-->
+      <aside class="col-xl-3 col-lg-3 col-md-12 px-0" id="sideBar">
+            <div class="list-group w-100">
+                <a href="#" class="list-group-item1"><h1>Username</h1></a>
+                <a id="dashboard-tab" href="#" class="list-group-item active">Dashboard</a>
+                <a id="referral-tab" href="#" class="list-group-item">Referral</a>
+                <a id="activity-tab" href="#" class="list-group-item">Activity</a>
+                <a id="setting-tab" href="#" class="list-group-item">Setting</a>
+                <a id="contact-tab" href="#" class="list-group-item">Contact</a>
+                <a href="#" id="logOut-tab" class="list-group-item">Log Out</a>
+           </div>
+      </aside>
+
+      <main class="offset-xl-3 offset-lg-3 offset-md-0 offset-sm-0 col-xl-9 col-lg-9 col-md-12 col-sm-12" id="content">
+
+          <!--======================dashboard=======================-->
+          <section id="dashboard">
+              <div class="container">
+                  <!--Section Report Mining-->
+                  <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-10 offset-0 offset-sm-1 data">
+                          <div>
+                              <h2 class="text-center">Total Mining</h2>
+                              <p>&nbsp;
+                                  <span>
+                                      <!--src="{{URL::asset('/img/ajax-loader.gif')}}"-->
+                                    <img src='/img/ajax-loader.gif' height="40" width="40">
+                                  </span>
+                                  <span class="styleBTC">BTC</span>
+                              </p>
+                              <hr >
+                              <p>
+                                  <span>
+                                    <img src='/img/ajax-loader.gif' height="40" width="40">
+                                  </span>
+                                  <span class="styleDollar">USD</span>
+                              </p>
+                              <!-- {{-- <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> --}} -->
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-10 offset-sm-1 data">
+                          <div >
+                              <h2 class="text-center">Daily Mining</h2>
+                              <p>&nbsp;
+                                  <span >
+                                      <!--src="{{URL::asset('/img/ajax-loader.gif')}}"-->
+                                    <img src='/img/ajax-loader.gif' height="40" width="40">
+                                  </span>
+                                  <span class="styleBTC">BTC</span>
+                              </p>
+                              <hr >
+                              <p>
+                                  <span>
+                                    <img src='/img/ajax-loader.gif' height="40" width="40">
+                                  </span>
+                                  <span class="styleDollar">USD</span>
+                              </p>
+                              <!--&lt;!&ndash; {{&#45;&#45; <button id="redeem" disabled onclick="redeem()"> Redeem ! </button> &#45;&#45;}} &ndash;&gt;-->
+                          </div>
+                      </div>
+                  </div>
+
+                  <!--Section: Hash History-->
+                  <div class="row mt-xl-5 mt-lg-5 mt-md-5 mt-sm-0" id="hashHistory">
+                      <h1 class="text-center w-100">Hash History</h1>
+                      <table class="table mt-2">
+                          <thead>
+                          <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                          </tr>
+                          <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                          </tr>
+                          <tr>
+                              <th scope="row">3</th>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <!--END Section: Hash History-->
+
+                  <!--Section: Buy Hash Power-->
+                  <div class="row mt-5 " id="buyHashPower">
+                      <h1 class="text-center w-100">Buy Hash Power</h1>
+
+                      <div class="slidecontainer">
+                          @if(count($errors->all()) > 0)
+                          <ul>
+                              @foreach($errors as $error)
+                              <li>{{$error}}</li>
+                              @endforeach
+                          </ul>
+                          @endif
+                          @include('sessionError')
+                          @if($settings->available_th > 0)
+
+                          <!-- <form class="dashboard-page" method="post" action="{{route('payment',['locale'=>session('locale')])}}"> -->
+                          <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
+                          <input type="hidden" id="thpricew" value="50">
+                          <input type="range" min="1" max="{{$settings->available_th}}" value="{{isset($hashPower)?$hashPower:$settings->available_th/2}}" name="hash" class="slider" id="myRange">
+                          <div class="buy-hashpower-text" style="font-weight: 700;padding-bottom:10px">
+                              <p style="color:black">{{__("Hash allocation cost :")}} <span id="cost"></span> {{__("dollar")}}
+                                  <span id="doReferalCode" style="animation-iteration-count:infinite;padding:2px"></span>
+                              </p>
+                              @if(Config::get('app.locale') == 'fa')
+                              <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} دلار ({{ $settings->maintenance_fee_per_th_per_day*$settings->usd_toman}} تومان) {{__('dollar per Th/day')}}</p>
+                              @else
+                              <p style="color:black">{{__('Maintenance fee')}}: {{$settings->maintenance_fee_per_th_per_day}} {{__('dollar per Th/day')}}</p>
+                              @endif
+                              <small style="color: #707070;">{{__("(include all electricity, cooling, development, and servicing costs )")}}</small>
+                              <p style="color:black">{{__('Income : At this time We predict')}} {{$settings->bitcoin_income_per_month_per_th}} {{__('BTC/month per Th')}}</p>
+                              <small  style="color: #707070;">{{__("(May be changed depends on bitcoin price and bitcoin network difficulty)")}}</small>
+
+                          </div>
+                          @if(Config::get('app.locale') == 'fa')
+                          <div id="referralDiv">
+                              <label id="referralLabel" for="referralCode">کد ارجاع:</label>
+                              <input required id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+                              <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> درخواست </button>
+                          </div>
+                          @if($settings->paystar_active == 1)
+                          <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('PaystarPaying',['locale'=>session('locale')])}}">
+                              @elseif($settings->zarrin_active == 1)
+                              <form onsubmit="order()" class="dashboard-page" method="post" action="{{route('ZarrinPalPaying',['locale'=>session('locale')])}}">
+                                  @endif
+
+                                  {{--  <form class="dashboard-page" method="post" action="{{route('TestPayment')}}">  --}}
+                                  <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                  @if($apply_discount == 1)
+
+                                  <input id="discount" type="hidden" name="discount" value="{{$discount}}">
+
+                                  @else
+                                  <input id="discount" type="hidden" name="discount" value="0">
+                                  @endif
+                                  <input id='hiddenCodeValue' type="hidden" name="code" style="margin-top:5px" value="{{$AppliedCode}}" >
+                                  <input type="range" hidden min="1" max="{{$settings->available_th}}" value="{{$settings->available_th/2}}" name="hash" class="slider" id="hiddenRange">
+                                  <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
+                              </form>
+                                  @else
+                                  <div id="referralDiv">
+                                      <label id="referralLabel" style="color:black;font-weight:bolder" for="referralCode">Referral Code</label>
+                                      <input id='referralCode' type="text" placeholder="{{$AppliedCode}}" name="referralCode" style="margin-top:5px" class="aplybtn1text"/>
+                                      <button id="code" type="button" onclick="sendCode()" class="btn btn-primary aplybtn"> Apply </button>
+                                  </div>
+                                  <button id="orderBtn" class="pandel-button" type="submit">{{__("Order")}}</button>
+                                  @endif
+                                  <!-- </form> -->
+                                  @else
+
+                                  <p style="color: black;text-align: center;"> {{__("TH Not Available !")}}</p>
+
+
+                                  @endif
+                      </div>
+                  </div>
+                  <!--END Section: Buy Hash Power-->
+
+                  <!--Section: Mining History-->
+                  <div class="row mt-5 " id="miningHistory">
+                      <h1 class="text-center w-100">Mining History</h1>
+                      <div class="ct-chart">
+                          <!-- <canvas id="chart1"></canvas> chart-container -->
+                      </div>
+                  </div>
+                  <!--END Section: Mining History-->
+
+
+                  <!-- The Modal First message-->
+                  <div id="modalFirstTime" class="modal" style="color: black;">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                          <span id="close" class="close">&times;</span>
+                          <div class="text-center">
+                              <br/>
+                              <h2> Welcome to Hash Bazaar </h2>
+                              <br/>
+                              <p>Thanks for your registration. From now on you join our community.</p>
+                              <p>It means you have the permission to invest in Hash Bazaar by yourself and use your Investment ID as your referral code to invite your friends. More friends, more bonuses. You can find our reward program from your panel.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- END Modal First message-->
+              </div>
+          </section>
+
+
+          <!--======================referral=======================-->
+          <section id="referral" class="mt-5">
+              <div class="container">
+                  <div class="row">
+
+                      <table class="table mt-2">
+                          <thead>
+                          <tr>
+                              <th scope="col">Number of referrals</th>
+                              <th scope="col">Total first referrals order</th>
+                              <th scope="col">My Benefit</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>{{$user->referral->total_sharing_num}}</td>
+                              <td>{{$total_hash_from_referral}} Th</td>
+                              <td>{{$benefit}} Th</td>
+                          </tr>
+                          </tbody>
+                      </table>
+
+
+                      <blockquote>My Referral ID: </blockquote>
+                      <p class="myReferralId" id="copyTarget">{{$user->code}}<a class="coppyIcon" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a></p>
+
+                      <div class="ref-flex">
+                          <blockquote style="margin-top:0%">My Referral LINK: </blockquote>
+                          <p class="shareReferralId"  style="padding-left:1%">
+         <span class="tooltip1" style="color:green"> http://hashbazaar.com/...
+            <a style="margin-top:15%"
+               class="tooltiptext"  id="copyTarget2"
+               href="{{route('index',['code'=>$user->code])}}">{{route('index',['code'=>$user->code])}}</a></span>
+                              <a class="coppyIcon2" style="cursor: pointer;"><img class="icon" src="../img/Copy.svg" alt=""></a>
+                          </p>
+                      </div>
+
+                      <br/>
+                      <div class="container myDiv" style="min-width: 300px;color: black;padding: 0px;">
+                          <div class="row peymane-container">
+                              <div class="referal-left-text">
+                                  <h3 class="referal-code-text">Number of Referrals</h3>
+                                  <h3>100K</h3>
+                                  <h3>10K</h3>
+                                  <h3>1000</h3>
+                                  <h3>500</h3>
+                              </div>
+                              <div class="referal">
+                                  <div class="referal-level referal-level-1">
+                                  </div>
+                                  <div class="referal-level referal-level-2">
+                                  </div>
+                                  <div class="referal-level referal-level-3">
+                                  </div>
+                                  <div class="referal-level referal-level-4">
+                                  </div>
+                                  <div class="referal-level referal-level-5">
+                                  </div>
+                              </div>
+                              <div class="horizontal-lines-container">
+                                  <span class="referal-percent referal-percent-1">6.5%</span>
+                                  <div class="line line-vertical-1"></div>
+                                  <span class="referal-percent referal-percent-2">5.5%</span>
+                                  <div class="line line-vertical-2"></div>
+                                  <span class="referal-percent referal-percent-3">4.5%</span>
+                                  <div class="line line-vertical-3"></div>
+                                  <span class="referal-percent referal-percent-4">3.5%</span>
+                                  <div class="line line-vertical-4"></div>
+                                  <span class="referal-percent referal-percent-5">2.5%</span>
+                                  <div class="line line-vertical-5"></div>
+                              </div>
+                              <div  class="circle-output-container">
+                                  <div class="circle circle-1">
+                                      <h3 class="text-center">3TH</h3>
+                                  </div>
+                                  <p class="text-center">+</p>
+                                  <div class="circle circle-2">
+                                      <h3 class="text-center">3TH</h3>
+                                  </div>
+                                  <p class="text-center">+</p>
+                                  <div class="circle circle-3">
+                                      <h3 class="text-center">2TH</h3>
+                                  </div>
+                                  <p class="text-center">+</p>
+                                  <div class="circle circle-4">
+                                      <h3 class="text-center">1.5TH</h3>
+                                  </div>
+                                  <p class="text-center">+</p>
+                                  <div class="circle circle-5">
+                                      <h3 class="text-center">1TH</h3>
+                                  </div>
+                                  <p class="text-center">=</p>
+                                  <div class="circle circle-6">
+                                      <h3 class="text-center">7.5TH</h3>
+                                  </div>
+                              </div>
+                          </div>
+                          <br/>
+
+                          <div class="container yek" style="color: black;margin-top: 0px;">
+                              <br/>
+                              <p>You can join our affiliate program through different ways. Share your dedicated referral code or link wherever you want.</p>
+                              <p>Your referral will get a 3% discount on their first purchase, and you will get a free hashpower upgrade as your affiliate reward from Hashbazaar depend on your level as the following table.</p>
+
+                              <table class="table table-bordered text-center">
+                                  <thead>
+                                  <tr>
+                                      <th>Total number of referrals</th>
+                                      <th rowspan="2" class="text-center">Referral group</th>
+                                      <th>Your affiliate reward</th>
+                                  </tr>
+
+                                  <tr>
+                                      <th>Total Number of people used your referral code or link</th>
+                                      <th>% of referrals first order</th>
+                                  </tr>
+                                  </thead>
+
+                                  <tbody class="text-center" style="font-family:sans-serif">
+                                  <tr>
+                                      <td>0 <     < 500 </td>
+                                      <td>C</td>
+                                      <td>2.5%</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>500 <   < 1000 </td>
+                                      <td>B</td>
+                                      <td>3.5%</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>1K <    < 10K</td>
+                                      <td>A</td>
+                                      <td>4.5%</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>10K <    < 100K </td>
+                                      <td>A+</td>
+                                      <td>5.5%</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>100K <    </td>
+                                      <td>A++</td>
+                                      <td>6.5%</td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+
+                              <p>For instance if you reach 100 referrals you will get 2.5% of total hash power that is purchased by them as your referral group “C”.</p>
+                              <p>If you reach 500 from now on your affiliate reward will be increased to 3.5%. In other words if you reach for instance 800 referrals, you will get 2.5% of total hash power that is purchased by 500 referrals from group “C”  and 3.5% of total hash power that is purchased by 300 referrals from group “B”. </p>
+                              <p>Note that all the affiliate rewards will be given by Hashbazaar to our promoters to encourage others to join the future of cryptocurrency transaction system and also gain profit from their investment.</p>
+
+                              <table class="table table-bordered text-center">
+                                  <thead>
+                                  <tr>
+                                      <th>Banner Size (px)</th>
+                                      <th>Banner Download</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody class="text-center" style="font-family:sans-serif">
+                                  <tr>
+                                      <td>120x600 </td>
+                                      <td><a href="{{route('banner',['name'=>'120_600_hashbazaar'])}}">Download here</a></td>
+                                  </tr>
+                                  <tr>
+                                      <td>728x90 </td>
+                                      <td><a href="{{route('banner',['name'=>'728_90_hashbazaar'])}}">Download here</a></td>
+                                  </tr>
+                                  <tr>
+                                      <td>300x250 </td>
+                                      <td><a href="{{route('banner',['name'=>'300_250_hashbazaar'])}}">Download here</a></td>
+                                  </tr>
+
+                                  </tbody>
+                              </table>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+
+          <!--======================activity=======================-->
+          <section id="activity">
+              <div class="container ">
+                  <div class="row">
+                      <h1 class="w-100 text-center mt-5">Activity</h1>
+
+                      <div class="col-12">
+                          <h2 class="w-100 text-center mt-5 text-dark">Heading</h2>
+                          <table class="table mt-2">
+                              <thead>
+                              <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">First</th>
+                                  <th scope="col">Last</th>
+                                  <th scope="col">Handle</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <th scope="row">1</th>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">2</th>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">3</th>
+                                  <td>Larry</td>
+                                  <td>the Bird</td>
+                                  <td>@twitter</td>
+                              </tr>
+                              </tbody>
+                          </table>
+
+                      </div>
+
+
+                      <div class="col-12">
+                          <h2 class="w-100 text-center mt-5 text-dark">Heading</h2>
+                          <table class="table mt-2">
+                              <thead>
+                              <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">First</th>
+                                  <th scope="col">Last</th>
+                                  <th scope="col">Handle</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <th scope="row">1</th>
+                                  <td>Mark</td>
+                                  <td>Otto</td>
+                                  <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">2</th>
+                                  <td>Jacob</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">3</th>
+                                  <td>Larry</td>
+                                  <td>the Bird</td>
+                                  <td>@twitter</td>
+                              </tr>
+                              </tbody>
+                          </table>
+
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <!--======================contact=======================-->
+          <section id="contact">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-12 text-center mt-5"  onclick="hideMe()">
+                          <h2 class="panel-header text-center mb-5"> {{__("LET US KNOW YOUR QUESTIONS")}}</h2>
+                          <form method="post" class="text-center m-auto" action="{{route('contact')}}">
+                              <input type="hidden" name="_token" value="{{csrf_token()}}">
+                              <input type="hidden" name="name" id="Name" value="{{Auth::guard('user')->user()->name}}">
+                              <input type="hidden" name="email" id="Email" value="{{Auth::guard('user')->user()->email}}">
+                              <textarea class="form-control" rows="5" name="message" placeholder="{{__("Your message ...")}}"></textarea>
+                              <button class="btn btn-success rounded mt-2">Send</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <!--======================setting=======================-->
+          <section id="setting">
+              <div class="container">
+                  <div class="row">
+                  </div>
+              </div>
+          </section>
+
+
+
+          <!--======================footer==========================-->
+          <footer id="footer" class="footer-area footer--light mt-5 mb-2">
+          <div class="mini-footer">
+          <div class="container-fluid">
+          <div class="row">
+              <hr class="w-100">
+          <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
+          <h5 class="pr-5 pr-md-3 text-center">© 2018 HashBazaar. All rights reserved</h5>
+              <img src="http://hashbazaar.com/img/Logo_footer.png" class="w-25" alt="">
+          </div>
+          </div>
+          </div>
+          </div>
+          </footer>
+      </main>
+
+    </div>
+  </div>
+
+
+<!----------------------Scripts--------------------->
+   <!--jquery-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <!--bootstrap4 js-->
+  <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <!--wow js-->
+    <script src="vendor/wow.min.js"></script>
+    <!--main-->
+  <script src="vendor/js/main.js"></script>
+
+
+  </body>
+
+</html>

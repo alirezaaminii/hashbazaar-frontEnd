@@ -1,0 +1,153 @@
+#mainNav {
+  z-index: 999;
+  width:100%;
+  height:9rem;
+  @include mq('tablet',max){
+    height:6rem;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .navbar {
+    background-color: black;
+    width:100%;
+    height: 100%;
+    border-bottom: 4px solid $hashOrange;
+    .navbar-brand {
+      height:100% !important;
+      width:30%;
+      @include mq('phone-wide',max){
+        width:40%;
+      }
+      a {
+        height:100%;
+        width:70%;
+        margin-left:10%;
+        margin-top:20%;
+
+        img{
+          width:100%;
+          height:auto;
+          margin-top:8%;
+          @include mq('phone-wide',max){
+            width:100%;
+            margin-top:15%;
+          }
+          @include mq('smallest-phone',max){
+            margin-top:20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+aside#sideBar {
+  z-index:0 !important;
+  position: fixed;
+  top:9rem !important;
+  left:0;
+  right:0;
+  bottom:0;
+  height:78%;
+  background-color: $hashDark;
+  @include border-radius(0);
+  @include mq('tablet',max){
+    z-index: 999999;
+    height:43%;
+    display: none;
+    top:6rem !important;
+  }
+  .list-group {
+
+    background-color: $hashDark;
+    .list-group-item {
+      @include mq('tablet',max){
+        padding:2%;
+      }
+    }
+    a:not(.list-group-item1) {
+      color:$hashOrange;
+
+      &:hover {
+        color:$white;
+      }
+      &:before {
+        content: "";
+        width: 35px;
+        height: 35px;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 8%;
+        top: 20% !important;
+        @include mq('tablet',max){
+          left: 36%;
+        }
+        @include mq('tablet-small',max){
+          left: 30%;
+        }
+        @include mq('phone',max){
+          left: 23%;
+          width: 30px;
+          height: 30px
+        }
+        @include mq('phone-mid',max){
+          left: 23%;
+        }
+      }
+
+      &:after {
+        background-image: url('../img/Arrow.svg');
+        width: 1em;
+        height: 1em;
+        content: "";
+        top:30%;
+        right: 8%;
+        background-size: 100% 100%;
+        position: absolute;
+        @include mq('tablet',max){
+          display: none;
+        }
+      }
+    }
+
+    #dashboard-tab:before {
+      background-image: url('../img/Dashboard.svg');
+    }
+
+    #activity-tab:before {
+      background-image: url('../img/Activity.svg');
+    }
+    #referral-tab:before {
+      background-image: url('../img/Referral.svg');
+    }
+
+    #contact-tab:before {
+      background-image: url('../img/contact.svg');
+    }
+
+    #setting-tab:before {
+      background-image: url('../img/Setting.svg');
+    }
+    #logOut-tab:before {
+      background-image: url('../img/sign-out-alt-solid.svg');
+    }
+
+
+
+
+
+  }
+  .list-group-item1 {
+    padding:7%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+    @include mq('tablet',max){
+      padding:1%;
+      padding-top:2%;
+      h1 {
+        font-size:1.4rem;
+      }
+    }
+  }
+}

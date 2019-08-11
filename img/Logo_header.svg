@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 369 78">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 0.75px;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #fafafa;
+        font-size: 67px;
+        font-family: RobotoMonoForPowerline-Medium, Roboto Mono Medium for Powerline;
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        fill: #eaae0d;
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e9a300"/>
+      <stop offset="1" stop-color="#ffe300"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_293" data-name="Group 293" transform="translate(0 8.164)">
+    <g id="Group_291" data-name="Group 291" transform="translate(82.456 -4.296)">
+      <g id="Layer_1-2_1_">
+        <path id="Path_91" data-name="Path 91" class="cls-1" d="M232.153,39.24a13.565,13.565,0,0,0-2.576-3.876,14.051,14.051,0,0,0-6.484-3.719s4.224-2.347,5.483-5.526c0,0,2.422-5.239-.091-10.014a15.39,15.39,0,0,0-2.59-3.993,12.453,12.453,0,0,0-6.81-3.211c-.512-.09-5.949-.45-5.949-.243V.38h-6.361V8.618H201.2V.38h-6.47V8.8l-12.863-.148v7.383a32.029,32.029,0,0,1,5.166.072,3.817,3.817,0,0,1,3.038,2.684,13.968,13.968,0,0,1,.045,2.986V47.122a3.666,3.666,0,0,1-3.12,3.4c-.57.135-5.134.13-5.134.1v7.267h12.89v8.143h6.628V57.891h5.171v8.143h6.61V57.923s7.095,0,10.241-1.223a10.5,10.5,0,0,0,7.326-5.666,9.517,9.517,0,0,0,.9-2.131C232.388,46.065,233.316,42.005,232.153,39.24ZM211.778,15.812c3.93-.009,5.356,5.778,4.491,8.993a7.272,7.272,0,0,1-2.875,4.227c-1.087.728-2.363.549-3.595.549h-8.521V15.821Q206.529,15.828,211.778,15.812Zm8.181,27.524a7.767,7.767,0,0,1-6.909,7.064,64.439,64.439,0,0,1-7.457.049h-4.315V36.227h7.783c3.595,0,7.385,0,9.662,3.462A6.5,6.5,0,0,1,219.96,43.336Z" transform="translate(-181.86 -0.38)"/>
+      </g>
+    </g>
+    <rect id="Rectangle_105" data-name="Rectangle 105" class="cls-2" width="233.353" height="56.165" transform="translate(135.647 3.378)"/>
+    <text id="AZAAR" class="cls-3" transform="translate(135.649 53.836)"><tspan x="0" y="0">AZAAR</tspan></text>
+    <g id="Group_292" data-name="Group 292" transform="translate(0 -3.399)">
+      <path id="Path_92" data-name="Path 92" class="cls-4" d="M70.631,49.329h0a4.092,4.092,0,0,0-4.079-4.079H4.079A4.092,4.092,0,0,0,0,49.329H0a4.092,4.092,0,0,0,4.079,4.079H66.551A4.1,4.1,0,0,0,70.631,49.329Z" transform="translate(0 -25.982)"/>
+      <path id="Path_93" data-name="Path 93" class="cls-4" d="M70.631,100.289h0a4.092,4.092,0,0,0-4.079-4.079H4.079A4.092,4.092,0,0,0,0,100.289H0a4.092,4.092,0,0,0,4.079,4.079H66.551A4.092,4.092,0,0,0,70.631,100.289Z" transform="translate(0 -54.017)"/>
+      <path id="Path_94" data-name="Path 94" class="cls-4" d="M51.939,72.538h0a4.079,4.079,0,0,0,4.079-4.053V6.413A4.079,4.079,0,0,0,51.939,2.36h0A4.079,4.079,0,0,0,47.86,6.413V68.485A4.076,4.076,0,0,0,51.939,72.538Z" transform="translate(-26.191 -2.36)"/>
+      <path id="Path_95" data-name="Path 95" class="cls-4" d="M104.769,72.538h0a4.079,4.079,0,0,0,4.079-4.053V6.413a4.079,4.079,0,0,0-4.079-4.053h0a4.079,4.079,0,0,0-4.079,4.053V68.485A4.076,4.076,0,0,0,104.769,72.538Z" transform="translate(-55.102 -2.36)"/>
+    </g>
+  </g>
+</svg>
